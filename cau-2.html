@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countUppercaseChars(input) {
+        let count = 0;
+        for (let i = 0; i < input.length; i++) {
+            if (input[i] === input[i].toUpperCase()) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return "The Strings is not contain upper char";
+        }
+    }
+
+    // Ví dụ sử dụng
+    let input1 = "abcdEF";
+    let input2 = "accdef";
+
+    document.write(`countUppercaseChars:`+ countUppercaseChars(input1)+'<br>');
+    document.write(countUppercaseChars(input2));
+</script>
+
+</body>
+</html>

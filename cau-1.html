@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //In ra các số chẵn tu a đến b;
+    // // In ra các số từ a đến b số chẵn trong h2, so le trong h1;
+    // let a = +prompt('nhap vao a');
+    // let b = +prompt('nhap vao b');
+    // let
+    // for (let i = a; i <=b ; i++) {
+    //     if(i%2===0){document.write('<h2>'+i+'</h2>')}
+    //     else{document.write('<h1>'+i+'</h1>')}
+    // }
+    function tinhHieuTongChanLe(arr) {
+        let tongChan = 0;
+        let tongLe = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                tongChan += arr[i];
+            } else {
+                tongLe += arr[i];
+            }
+        }
+
+        return tongChan - tongLe;
+    }
+
+    function main() {
+        let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+        if (n > 20) {
+            alert("Số phần tử của mảng không được lớn hơn 20.");
+            return;
+        }
+
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `)));
+        }
+
+        document.write("Danh sách các phần tử của mảng:", arr+'<br>5');
+        let hieu = tinhHieuTongChanLe(arr);
+        document.write("Hiệu của tổng các số chẵn và tổng các số lẻ:", hieu);
+    }
+
+    main();
+
+</script>
+
+</body>
+</html>

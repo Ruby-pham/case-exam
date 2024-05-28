@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function check(num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+
+        if (num % 2 === 0 || num % 3 === 0) return false;
+
+        for (let i = 5; i * i <= num; i += 6) {
+            if (num % i === 0 || num % (i + 2) === 0) return false;
+        }
+
+        return true;
+    }
+
+    function getNumber(arr) {
+        let Numbers = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (check(arr[i])) {
+                Numbers.push(arr[i]);
+            }
+        }
+        return Numbers.sort((a, b) => a - b);
+    }
+
+    // Ví dụ sử dụng
+    let inputArray = [1, 5, 6, 23, 8, 47, 10, 3];
+    document.write('arr= ['+getNumber(inputArray)+']');
+</script>
+</body>
+</html>
